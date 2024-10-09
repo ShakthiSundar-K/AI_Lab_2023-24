@@ -1,8 +1,9 @@
 # Ex.No: 9  Logic Programming –  Computer Maintenance Expert System
-### DATE:  23-09-24                                                                         
+### DATE: 25/3/2024                                                                          
 ### REGISTER NUMBER : 212222040152
 ### AIM: 
 Write a Prolog program to build a computer maintenance expert system.
+
 ###  Algorithm:
 1. Start the program.
 2. Write the rules for each fault in computer.
@@ -14,39 +15,34 @@ Write a Prolog program to build a computer maintenance expert system.
 8. Find the fault of computer by passing query to system.
      
 ### Program:
-
-```py
-% Define facts
-symptom(printer, no_printing).
-symptom(printer, missing_dots).
-symptom(printer, no_uniform_printing).
-symptom(printer, spread_ink).
-symptom(printer, paper_jam).
-symptom(printer, out_of_paper).
-
-% Define rules for diagnosis
+```
 fault(printer_head) :- 
-    symptom(printer, no_printing), 
-    symptom(printer, missing_dots), 
-    symptom(printer, no_uniform_printing).
-
+ problem(not_printing), 
+ problem(missing_dots), 
+ problem(nonuniform_printing). 
 fault(ribbon) :- 
-    symptom(printer, no_printing), 
-    symptom(printer, missing_dots), 
-    symptom(printer, spread_ink).
-
-fault(paper_stuck) :- 
-    symptom(printer, no_printing), 
-    symptom(printer, paper_jam), 
-    symptom(printer, out_of_paper).
-
-% Query examples
-find_fault(Fault) :- fault(Fault).
-
+ problem(not_printing), 
+ problem(missing_dots), 
+ problem(spread_ink). 
+fault(paper) :- 
+ problem(not_printing), 
+ problem(paper_jam), 
+ problem(out_of_paper). 
+fault(motherboard) :- 
+ problem(long_beep), 
+ problem(short_beep). 
+fault(hard_disc) :- 
+ problem(two_short_beeps), 
+ problem(blank_display). 
+problem(not_printing). 
+problem(missing_dots). 
+problem(spread_ink). 
+problem(two_short_beeps). 
+problem(blank_display).
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/fcb0ff0f-b112-45f8-adf0-3683e77cc644)
+![316234732-dd3e5991-a7da-45bf-8125-465df4f69e49](https://github.com/Praveenanagaraji22/AI_Lab_2023-24/assets/119393514/4bbffa8d-c1f8-4465-84c5-aeb70fa01051)
 
 ### Result:
 Thus the simple omputer maintenance expert system was built sucessfully.
